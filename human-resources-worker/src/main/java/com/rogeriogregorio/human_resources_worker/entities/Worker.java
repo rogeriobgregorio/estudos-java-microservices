@@ -15,7 +15,11 @@ public class Worker implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "daily_income")
     private Double dailyIncome;
 
     public Worker() {
