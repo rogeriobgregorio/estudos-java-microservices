@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -8,52 +8,55 @@
 		<version>3.4.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+	<!-- Definição das informações básicas do projeto -->
 	<groupId>com.rogeriogregorio</groupId>
 	<artifactId>human-resources-payroll</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>human-resources-payroll</name>
 	<description>Payroll Microservice</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
+
+	<!-- Define a versão do Java usada no projeto -->
 	<properties>
 		<java.version>17</java.version>
-		<spring-cloud.version>2024.0.0</spring-cloud.version>
+		<spring-cloud.version>2024.0.0</spring-cloud.version> <!-- Versão do Spring Cloud -->
 	</properties>
+
 	<dependencies>
+		<!-- Dependência para OpenFeign, usada para comunicação declarativa entre serviços -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
+		<!-- Dependência do Spring Web para construção de APIs RESTful -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Dependência de testes (JUnit, Assert, etc.) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<scope>test</scope> <!-- Definido para ser usado apenas em testes -->
+		</dependency>
+
+		<!-- Dependência do Spring Cloud LoadBalancer para balanceamento de carga entre instâncias -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
 		</dependency>
 	</dependencies>
 
+	<!-- Gerenciamento de versões para as dependências do Spring Cloud -->
 	<dependencyManagement>
 		<dependencies>
+			<!-- Importa as dependências do Spring Cloud de maneira controlada -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
+				<version>${spring-cloud.version}</version> <!-- A versão do Spring Cloud definida acima -->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -62,6 +65,7 @@
 
 	<build>
 		<plugins>
+			<!-- Plugin do Spring Boot para construir e empacotar o aplicativo -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
