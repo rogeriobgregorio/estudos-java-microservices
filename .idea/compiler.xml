@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="human-resources-worker" />
         <module name="human-resources-payroll" />
+        <module name="human-resources-eureka-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="human-resources-eureka-server" options="-parameters" />
       <module name="human-resources-payroll" options="-parameters" />
       <module name="human-resources-worker" options="-parameters" />
     </option>
