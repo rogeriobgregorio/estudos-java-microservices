@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Component
-@FeignClient(name = "human-resources-worker", fallback = WorkerFeignClientFallback.class)
+@FeignClient(name = "human-resources-worker")
 public interface WorkerFeignClient {
 
     @GetMapping(value = "/workers/{id}")
